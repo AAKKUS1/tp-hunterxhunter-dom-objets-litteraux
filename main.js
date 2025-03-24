@@ -854,9 +854,25 @@ function createCard(image, number, rank, name, description) {
 	card.appendChild(illustrationBox);
 	card.appendChild(descriptionArea);
 
-    
+	
+descriptionDiv.appendChild(descriptionText);
+descriptionArea.appendChild(descriptionDiv);
+
+card.appendChild(cardTitle);
+card.appendChild(illustrationBox);
+card.appendChild(descriptionArea);
+
+return card;
 }
+
 for (let i = 0; i < cards.length; i++) {
-    let myCard = createCard(cards[i].image,cards[i].number, cards[i].rank,cards[i].name,cards[i].description )
-    document.querySelector('main').appendChild(myCard);
+let myCard = createCard(
+	cards[i].image,
+	cards[i].number,
+	cards[i].rank,
+	cards[i].name,
+	cards[i].description
+);
+document.querySelector("main").appendChild(myCard);
 }
+
